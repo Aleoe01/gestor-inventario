@@ -1,0 +1,12 @@
+E:\Ale\CursoC#\GestorDeInventario\gestorDeInventario\dominio\bin\Debug\dominio.dll
+E:\Ale\CursoC#\GestorDeInventario\gestorDeInventario\dominio\bin\Debug\dominio.pdb
+E:\Ale\CursoC#\GestorDeInventario\gestorDeInventario\dominio\obj\Debug\dominio.csproj.AssemblyReference.cache
+E:\Ale\CursoC#\GestorDeInventario\gestorDeInventario\dominio\obj\Debug\dominio.csproj.CoreCompileInputs.cache
+E:\Ale\CursoC#\GestorDeInventario\gestorDeInventario\dominio\obj\Debug\dominio.dll
+E:\Ale\CursoC#\GestorDeInventario\gestorDeInventario\dominio\obj\Debug\dominio.pdb
+D:\Ale\CursoC#\GestorDeInventario\gestorDeInventario\dominio\bin\Debug\dominio.dll
+D:\Ale\CursoC#\GestorDeInventario\gestorDeInventario\dominio\bin\Debug\dominio.pdb
+D:\Ale\CursoC#\GestorDeInventario\gestorDeInventario\dominio\obj\Debug\dominio.csproj.AssemblyReference.cache
+D:\Ale\CursoC#\GestorDeInventario\gestorDeInventario\dominio\obj\Debug\dominio.csproj.CoreCompileInputs.cache
+D:\Ale\CursoC#\GestorDeInventario\gestorDeInventario\dominio\obj\Debug\dominio.dll
+D:\Ale\CursoC#\GestorDeInventario\gestorDeInventario\dominio\obj\Debug\dominio.pdb
