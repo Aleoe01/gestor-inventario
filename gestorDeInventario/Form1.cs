@@ -12,9 +12,9 @@ using negocio;
 
 namespace gestorDeInventario
 {
-    public partial class Form1: Form
+    public partial class Form1 : Form
     {
-        private List<Articulo> articuloList; 
+        private List<Articulo> articuloList;
         public Form1()
         {
             InitializeComponent();
@@ -53,11 +53,11 @@ namespace gestorDeInventario
 
         private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
         {
-            if(dgvArticulos.CurrentRow != null)
+            if (dgvArticulos.CurrentRow != null)
             {
                 Articulo seleccion = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
                 Helper.cargarImagen(seleccion.ImagenUrl, pbxArticulo);
-            } 
+            }
         }
 
         private void btnDetalle_Click(object sender, EventArgs e)
@@ -108,6 +108,26 @@ namespace gestorDeInventario
         {
             Close();
         }
+        private void txbBuscar_TextChanged(object sender, EventArgs e)
+        {
+            List<Articulo> listaFiltrada;
+
+            if (txbBuscar.Text != "")
+            {
+                listaFiltrada = articuloList.FindAll(x => x.Nombre.ToUpper().Contains(txbBuscar.Text.ToUpper()));
+
+                dgvArticulos.DataSource = null;
+                dgvArticulos.DataSource = listaFiltrada;
+                ocultarColumnas();
+            }
+            else 
+            {
+                cargar();   
+            }
+               
+            
+        }
+
     }
 
 }

@@ -143,6 +143,7 @@
             this.txbBuscar.Name = "txbBuscar";
             this.txbBuscar.Size = new System.Drawing.Size(222, 20);
             this.txbBuscar.TabIndex = 5;
+            this.txbBuscar.TextChanged += new System.EventHandler(this.txbBuscar_TextChanged);
             // 
             // label1
             // 
