@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -64,6 +65,12 @@
     <Compile Include="FrmDetalle.Designer.cs">
       <DependentUpon>FrmDetalle.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmFiltroAvanzado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmFiltroAvanzado.Designer.cs">
+      <DependentUpon>FrmFiltroAvanzado.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmModificar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,22 +89,26 @@
     <EmbeddedResource Include="FrmDetalle.resx">
       <DependentUpon>FrmDetalle.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmFiltroAvanzado.resx">
+      <DependentUpon>FrmFiltroAvanzado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmModificar.resx">
       <DependentUpon>FrmModificar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -116,6 +127,9 @@
       <Project>{0620651e-7766-4b73-b35e-05acf257693a}</Project>
       <Name>negocio</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\actualizar-flecha.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

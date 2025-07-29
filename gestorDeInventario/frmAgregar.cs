@@ -9,12 +9,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using dominio;
 using negocio;
+using System.Configuration;
+using System.IO;
+
 
 namespace gestorDeInventario
 {
     public partial class frmAgregar : Form
     {
-        Articulo modificable = null;
+
+        private OpenFileDialog archivo = null; // se crea esta variable para indicar si se debe o no gaurdar imagen de manera local
 
         public frmAgregar()
         {
@@ -29,8 +33,8 @@ namespace gestorDeInventario
 
             try
             {
-                cbxAddCat.DataSource = categoriaNegocio.listar();
-                cbxAddMarca.DataSource = marcaNegocio.listar();
+                cbxAddCat.DataSource = categoriaNegocio.listar(); // Llena ComboBox de categorías
+                cbxAddMarca.DataSource = marcaNegocio.listar(); // Llena ComboBox de marcas
             }
             catch (Exception err)
             {
@@ -41,6 +45,30 @@ namespace gestorDeInventario
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+
+            // Validaciones
+            if (string.IsNullOrWhiteSpace(txbAddCodigo.Text))
+            {
+                MessageBox.Show("El campo Código es obligatorio.", "Campo requerido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txbAddCodigo.Focus();
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txbAddNombre.Text))
+            {
+                MessageBox.Show("El campo Nombre es obligatorio.", "Campo requerido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txbAddNombre.Focus();
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txbAddPrecio.Text))
+            {
+                MessageBox.Show("Ingrese un precio válido (mayor a 0).", "Dato incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txbAddPrecio.Focus();
+                return;
+            }
+
+            // Sí pasa todas las validaciones se crea el nuevo articulo
             Articulo articuloNuevo = new Articulo();
             ArticuloNegocio articuloNegocio = new ArticuloNegocio();
 
@@ -54,14 +82,25 @@ namespace gestorDeInventario
 
             try
             {
+                // Llama al método agregar() para guardar el artículo en la base de datos
                 articuloNegocio.agregar(articuloNuevo);
                 MessageBox.Show("Articulo agregado exitosamente");
+
+                // Si se seleccionó un archivo de imagen local (no un link http), lo copia a la carpeta del sistema
+                if (archivo != null && !(txbAddImagen.Text.ToUpper().Contains("HTTP")))
+                    File.Copy(archivo.FileName, ConfigurationManager.AppSettings["inventarioImages"] + archivo.SafeFileName);
+
                 this.Close();
             }
             catch (Exception err)
             {
                 throw err;
             }
+        }
+        private void txbAddPrecio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar < 48 || e.KeyChar > 59) && e.KeyChar != 8) // permite solo ingresar numeros
+                e.Handled = true;
         }
 
         private void txbAddImagen_Leave(object sender, EventArgs e)
@@ -73,5 +112,18 @@ namespace gestorDeInventario
         {
             this.Close();
         }
+
+        private void btnAddImagen_Click(object sender, EventArgs e)
+        {
+            // Abre un cuadro de diálogo para elegir una imagen local
+            archivo = new OpenFileDialog();
+            archivo.Filter = "jpg|*.jpg;|png|*.png";
+            if (archivo.ShowDialog() == DialogResult.OK)
+            {
+                txbAddImagen.Text = archivo.FileName;
+                Helper.cargarImagen(archivo.FileName, pbxArticulo);
+            }
+        }
+
     }
 }

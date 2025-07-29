@@ -128,6 +128,22 @@ namespace gestorDeInventario
             
         }
 
+        private void btnFiltro_Click(object sender, EventArgs e)
+        {
+            FrmFiltroAvanzado frmFiltro = new FrmFiltroAvanzado();
+            
+            if (frmFiltro.ShowDialog() == DialogResult.OK)
+            {
+                dgvArticulos.DataSource = null;
+                dgvArticulos.DataSource = frmFiltro.listaFiltradaAvanzada;
+            }     
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            cargar();
+        }
     }
 
 }

@@ -45,25 +45,26 @@
             this.lblAddDescrip = new System.Windows.Forms.Label();
             this.lblAddNombre = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnAddImagen = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(426, 289);
+            this.btnCancel.Location = new System.Drawing.Point(444, 289);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(80, 23);
-            this.btnCancel.TabIndex = 36;
+            this.btnCancel.TabIndex = 8;
             this.btnCancel.Text = "Cancelar";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(318, 289);
+            this.btnModificar.Location = new System.Drawing.Point(336, 289);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(80, 23);
-            this.btnModificar.TabIndex = 35;
+            this.btnModificar.TabIndex = 7;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
@@ -74,11 +75,11 @@
             this.txbAddDescrip.Multiline = true;
             this.txbAddDescrip.Name = "txbAddDescrip";
             this.txbAddDescrip.Size = new System.Drawing.Size(181, 69);
-            this.txbAddDescrip.TabIndex = 34;
+            this.txbAddDescrip.TabIndex = 2;
             // 
             // pbxArticulo
             // 
-            this.pbxArticulo.Location = new System.Drawing.Point(297, 30);
+            this.pbxArticulo.Location = new System.Drawing.Point(315, 30);
             this.pbxArticulo.Name = "pbxArticulo";
             this.pbxArticulo.Size = new System.Drawing.Size(235, 235);
             this.pbxArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -92,7 +93,7 @@
             this.cbxAddMarca.Location = new System.Drawing.Point(95, 227);
             this.cbxAddMarca.Name = "cbxAddMarca";
             this.cbxAddMarca.Size = new System.Drawing.Size(181, 21);
-            this.cbxAddMarca.TabIndex = 32;
+            this.cbxAddMarca.TabIndex = 4;
             // 
             // cbxAddCat
             // 
@@ -101,21 +102,22 @@
             this.cbxAddCat.Location = new System.Drawing.Point(95, 191);
             this.cbxAddCat.Name = "cbxAddCat";
             this.cbxAddCat.Size = new System.Drawing.Size(181, 21);
-            this.cbxAddCat.TabIndex = 31;
+            this.cbxAddCat.TabIndex = 3;
             // 
             // txbAddPrecio
             // 
             this.txbAddPrecio.Location = new System.Drawing.Point(95, 302);
             this.txbAddPrecio.Name = "txbAddPrecio";
             this.txbAddPrecio.Size = new System.Drawing.Size(181, 20);
-            this.txbAddPrecio.TabIndex = 30;
+            this.txbAddPrecio.TabIndex = 6;
+            this.txbAddPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbAddPrecio_KeyPress_1);
             // 
             // txbAddImagen
             // 
             this.txbAddImagen.Location = new System.Drawing.Point(95, 264);
             this.txbAddImagen.Name = "txbAddImagen";
             this.txbAddImagen.Size = new System.Drawing.Size(181, 20);
-            this.txbAddImagen.TabIndex = 29;
+            this.txbAddImagen.TabIndex = 5;
             this.txbAddImagen.Leave += new System.EventHandler(this.txbAddImagen_Leave);
             // 
             // txbAddNombre
@@ -123,14 +125,14 @@
             this.txbAddNombre.Location = new System.Drawing.Point(95, 62);
             this.txbAddNombre.Name = "txbAddNombre";
             this.txbAddNombre.Size = new System.Drawing.Size(181, 20);
-            this.txbAddNombre.TabIndex = 28;
+            this.txbAddNombre.TabIndex = 1;
             // 
             // txbAddCodigo
             // 
             this.txbAddCodigo.Location = new System.Drawing.Point(95, 30);
             this.txbAddCodigo.Name = "txbAddCodigo";
             this.txbAddCodigo.Size = new System.Drawing.Size(181, 20);
-            this.txbAddCodigo.TabIndex = 27;
+            this.txbAddCodigo.TabIndex = 0;
             // 
             // label7
             // 
@@ -195,11 +197,22 @@
             this.label1.TabIndex = 20;
             this.label1.Text = "Codigo:";
             // 
+            // btnAddImagen
+            // 
+            this.btnAddImagen.Location = new System.Drawing.Point(282, 264);
+            this.btnAddImagen.Name = "btnAddImagen";
+            this.btnAddImagen.Size = new System.Drawing.Size(20, 20);
+            this.btnAddImagen.TabIndex = 37;
+            this.btnAddImagen.Text = "+";
+            this.btnAddImagen.UseVisualStyleBackColor = true;
+            this.btnAddImagen.Click += new System.EventHandler(this.btnAddImagen_Click_1);
+            // 
             // FrmModificar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(550, 352);
+            this.ClientSize = new System.Drawing.Size(570, 352);
+            this.Controls.Add(this.btnAddImagen);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.txbAddDescrip);
@@ -247,5 +260,6 @@
         private System.Windows.Forms.Label lblAddDescrip;
         private System.Windows.Forms.Label lblAddNombre;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnAddImagen;
     }
 }

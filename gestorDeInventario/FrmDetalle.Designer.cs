@@ -140,6 +140,8 @@
             this.Controls.Add(this.lblDetalleNombre);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pbxDetalle);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "FrmDetalle";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Detalle de articulo";
