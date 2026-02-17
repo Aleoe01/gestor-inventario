@@ -50,3 +50,4 @@ D:\Ale\CursoC#\GestorDeInventario\gestorDeInventario\obj\Debug\gestorDe.5BC80F42
 D:\Ale\CursoC#\GestorDeInventario\gestorDeInventario\obj\Debug\gestorDeInventario.exe
 D:\Ale\CursoC#\GestorDeInventario\gestorDeInventario\obj\Debug\gestorDeInventario.pdb
 D:\Ale\CursoC#\GestorDeInventario\gestorDeInventario\obj\Debug\gestorDeInventario.FrmFiltroAvanzado.resources
+D:\Ale\CursoC#\GestorDeInventario\gestorDeInventario\obj\Debug\gestorDeInventario.exe.config
